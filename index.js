@@ -1,24 +1,24 @@
-require('./db/db.connection');
+require("./db/db.connection");
 
-const express = require('express');
+const express = require("express");
 const app = express();
 app.use(express.json());
 
-const exerciseRouter = require('./routes/exercises.router');
-const foodRouter = require('./routes/food.router');
-const goalRouter = require('./routes/goals.router');
+const exerciseRouter = require("./routes/exercises.router");
+const foodRouter = require("./routes/food.router");
+const goalRouter = require("./routes/goals.router");
 
-const cors = require('cors');
+const cors = require("cors");
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://thegympro.vercel.app'],
+  origin: ["http://localhost:3000", "https://gymplus-backend.onrender.com/"],
   credentials: true,
-  optionSuccessStatus: 200
-}
+  optionSuccessStatus: 200,
+};
 app.use(cors(corsOptions));
 
-app.get('/', (req, res) => {
-  res.send('Hello, Express!');
-})
+app.get("/", (req, res) => {
+  res.send("Hello, Express!");
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -26,10 +26,10 @@ app.listen(PORT, () => {
 });
 
 // Mounting /exercises Router
-app.use('/exercises', exerciseRouter);
+app.use("/exercises", exerciseRouter);
 
 // Mounting /food Router
-app.use('/food', foodRouter);
+app.use("/food", foodRouter);
 
 // Mounting /goals Router
-app.use('/goals', goalRouter);
+app.use("/goals", goalRouter);
