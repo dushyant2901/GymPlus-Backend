@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 // Access your MongoDB connection string from secrets
 const mongoURI = process.env.MONGODB;
 
