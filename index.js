@@ -10,7 +10,7 @@ const goalRouter = require("./routes/goals.router");
 
 const cors = require("cors");
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://gymplus-backend.onrender.com/"],
+  origin: ["http://localhost:3000", "https://gymplus.onrender.com/"],
   credentials: true,
   optionSuccessStatus: 200,
 };
